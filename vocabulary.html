@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Vocabulary Levels</title>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+
+<style>
+  body {
+    font-family: 'Lexend', sans-serif;
+  }
+
+  .chunky-card {
+    box-shadow: 0 4px 0 0 #e5e5e5;
+    transition: 0.2s ease;
+  }
+
+  .chunky-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 0 #2b6c00;
+    border-color: #2b6c00;
+  }
+</style>
+</head>
+
+<body class="bg-[#faf9f8] text-[#1a1c1b]">
+
+<!-- ================= SIDEBAR (SENİN VERDİĞİN AYNEN) ================= -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-40 bg-white border-r-2 border-gray-200 hidden md:block">
+<div class="mb-8 px-4 flex flex-col items-start">
+<img class="w-16 h-16 mb-2"
+src="https://lh3.googleusercontent.com/aida/ADBb0ugqoMdclVP7okd0IID62CMKZxpLo-k0Y-_u6PhgnJ-bLPdTDM1XL0NkcJps-9uC0ayghnOHT15clUxFdA7VFuIK6-78v1TelD48PERG1EctHVXLbDKU5WaUqb7zFysMa42pmldlvb93cJE8qFKmjiSdeUYjkxZhvnAN7G-MOMbddjatzZhh9-wGhqsEc8dGwiMOpKvrfXHQpAiX6TKiX42UURjRD1osY4nLIp0Vdv6v1o-h66ykFLruHJ6P"/>
+
+<h1 class="text-2xl font-black text-primary-container uppercase">
+LINGOMENTOR
+</h1>
+</div>
+
+<nav class="flex flex-col gap-2">
+
+<a class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl"
+href="ilerleme_paneli.html">
+<span class="material-symbols-outlined">home</span>
+Home
+</a>
+
+<a class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl"
+href="learn_anasayfa.html">
+<span class="material-symbols-outlined">school</span>
+Learn
+</a>
+
+<div>
+
+  <button id="practiceBtn"
+    class="flex items-center justify-between w-full gap-4 px-4 py-3 bg-green-50 text-green-600 rounded-xl border-2 border-green-600">
+
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined">fitness_center</span>
+      Practice
+    </div>
+
+    <span id="practiceArrow" class="material-symbols-outlined transition-transform">
+      expand_more
+    </span>
+
+  </button>
+
+  <div id="practiceMenu" class="flex flex-col pl-12 mt-1 gap-2">
+    <a href="reading.html" class="text-sm text-gray-500 hover:text-black px-3 py-2 rounded-lg">
+      Reading
+    </a>
+    <a href="vocabulary.html" class="text-sm text-black font-bold px-3 py-2 rounded-lg">
+      Vocabulary
+    </a>
+  </div>
+
+</div>
+
+</nav>
+</aside>
+
+<!-- ================= MAIN ================= -->
+<main class="md:ml-64 min-h-screen flex justify-center px-6 py-10">
+
+<div class="max-w-5xl w-full">
+
+<!-- HEADER BOX -->
+<div class="bg-white rounded-3xl p-6 border-2 border-gray-200 mb-10 chunky-card">
+<h2 class="text-xl font-bold text-[#2b6c00] mb-2">
+📚 Vocabulary Practice Area
+</h2>
+<p class="text-gray-600">
+Choose your English level and start learning vocabulary step by step.
+</p>
+</div>
+
+<!-- TITLE -->
+<h1 class="text-3xl font-black text-center mb-10">
+Select Your Level
+</h1>
+
+<!-- LEVEL CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+<a href="vocab_beginner.html"
+class="bg-white p-6 rounded-3xl border-2 border-gray-200 chunky-card text-center">
+
+<div class="text-4xl mb-3">🌱</div>
+<h2 class="text-xl font-bold text-[#2b6c00]">Beginner</h2>
+<p class="text-gray-500 mt-2 text-sm">
+Basic everyday vocabulary
+</p>
+
+</a>
+
+<a href="vocab_intermediate.html"
+class="bg-white p-6 rounded-3xl border-2 border-gray-200 chunky-card text-center">
+
+<div class="text-4xl mb-3">🚀</div>
+<h2 class="text-xl font-bold text-[#006590]">Intermediate</h2>
+<p class="text-gray-500 mt-2 text-sm">
+Useful daily communication words
+</p>
+
+</a>
+
+<a href="vocab_advanced.html"
+class="bg-white p-6 rounded-3xl border-2 border-gray-200 chunky-card text-center">
+
+<div class="text-4xl mb-3">🧠</div>
+<h2 class="text-xl font-bold text-[#755b00]">Advanced</h2>
+<p class="text-gray-500 mt-2 text-sm">
+Academic & professional English
+</p>
+
+</a>
+
+</div>
+
+</div>
+
+</main>
+
+</body>
+</html>

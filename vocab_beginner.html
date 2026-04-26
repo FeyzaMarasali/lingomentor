@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: Lexend; }
+.word { cursor: pointer; }
+.popup {
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  width:300px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body class="bg-yellow-50 min-h-screen p-10">
+
+<a href="vocabulary.html" class="bg-yellow-400 text-white px-4 py-2 rounded-xl font-bold">← Back</a>
+
+<h1 class="text-3xl font-black mt-6 mb-6">Beginner Vocabulary</h1>
+
+<!-- WORD LIST -->
+<div class="grid md:grid-cols-4 gap-4">
+
+<!-- 50 WORDS -->
+<script>
+const words = [
+["apple","A fruit","I eat an apple."],
+["book","A reading object","This is a book."],
+["car","Vehicle","I have a car."],
+["water","Liquid","Drink water."],
+["house","Building","This is my house."],
+["school","Education place","I go to school."],
+["dog","Animal","The dog is cute."],
+["cat","Animal","The cat sleeps."],
+["sun","Star","The sun is hot."],
+["moon","Night object","The moon is bright."],
+["food","Meal","I like food."],
+["milk","Drink","Milk is healthy."],
+["chair","Furniture","Sit on chair."],
+["table","Furniture","On the table."],
+["phone","Device","My phone is new."],
+["computer","Device","I use computer."],
+["pen","Writing tool","Write with pen."],
+["paper","Material","White paper."],
+["bag","Object","My bag is heavy."],
+["shoe","Clothing","New shoes."],
+["run","Verb","I run fast."],
+["walk","Verb","Walk slowly."],
+["eat","Verb","Eat food."],
+["sleep","Verb","I sleep."],
+["happy","Emotion","I am happy."],
+["sad","Emotion","He is sad."],
+["big","Adjective","Big house."],
+["small","Adjective","Small dog."],
+["hot","Temperature","Hot tea."],
+["cold","Temperature","Cold water."],
+["friend","Person","My friend."],
+["family","Group","Family time."],
+["city","Place","Big city."],
+["road","Place","Long road."],
+["tree","Nature","Green tree."],
+["flower","Nature","Beautiful flower."],
+["rain","Weather","Rain today."],
+["snow","Weather","Snow is white."],
+["wind","Weather","Strong wind."],
+["light","Brightness","Light on."],
+["dark","Opposite","Dark room."],
+["fast","Speed","Fast car."],
+["slow","Speed","Slow walk."],
+["clean","Condition","Clean room."],
+["dirty","Condition","Dirty shoes."],
+["open","Verb","Open door."],
+["close","Verb","Close door."],
+["good","Positive","Good job."],
+["bad","Negative","Bad day."],
+["yes","Answer","Yes I agree."]
+];
+
+document.write(words.map(w =>
+`<div class="word bg-white p-3 rounded-xl shadow" onclick="show('${w[0]}','${w[1]}','${w[2]}')">
+${w[0]}
+</div>`
+).join(""));
+</script>
+
+</div>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+<h2 id="title" class="font-bold text-xl"></h2>
+<p id="meaning" class="mt-2"></p>
+<p id="example" class="mt-2 text-gray-600"></p>
+<button onclick="closePopup()" class="mt-4 bg-red-400 text-white px-3 py-1 rounded">Close</button>
+</div>
+
+<script>
+function show(word, meaning, example){
+  document.getElementById("title").innerText = word;
+  document.getElementById("meaning").innerText = meaning;
+  document.getElementById("example").innerText = example;
+  document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>

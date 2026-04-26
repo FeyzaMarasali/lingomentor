@@ -193,18 +193,7 @@ href="learn_anasayfa.html">
 
 </nav>
 
-<!-- PROFILE / SETTINGS -->
-<div class="absolute bottom-4 left-4 right-4 pt-4 border-t-2 border-gray-100">
-<div class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl cursor-pointer">
-<span class="material-symbols-outlined">person</span>
-<span class="font-lexend font-bold">Profile</span>
-</div>
 
-<div class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl cursor-pointer">
-<span class="material-symbols-outlined">settings</span>
-<span class="font-lexend font-bold">Settings</span>
-</div>
-</div>
 </aside>
 
 <!-- ================= JS (dropdown çalışması için) ================= -->
@@ -297,14 +286,33 @@ btn.addEventListener("click", () => {
 </div>
 </div>
 <!-- Card 4 (Placeholder/Coming Soon) -->
-<div class="group bg-surface-container-low p-6 rounded-3xl border-2 border-dashed border-surface-container-highest flex flex-col items-center justify-center text-center min-h-[220px]">
-<div class="w-12 h-12 bg-surface-container-high rounded-full flex items-center justify-center text-on-surface-variant mb-4">
-<span class="material-symbols-outlined text-3xl">lock</span>
-</div>
-<h3 class="font-h2 text-h2 text-on-surface-variant mb-1">More Soon</h3>
-<p class="font-body-md text-on-surface-variant/70">Complete tasks to unlock new stories.</p>
-</div>
-</div>
+<!-- Card 4 -->
+<div class="group bg-white p-6 rounded-3xl border-2 border-surface-container-highest chunky-card-shadow transition-all cursor-pointer flex flex-col justify-between min-h-[220px]">
+  <div>
+    <div class="flex justify-between items-start mb-4">
+      <div class="w-12 h-12 bg-secondary-container/10 rounded-2xl flex items-center justify-center text-secondary">
+        <span class="material-symbols-outlined text-3xl">coffee</span>
+      </div>
+      <span class="px-3 py-1 bg-primary-container/10 text-primary-container text-[12px] font-bold rounded-full border border-primary-container">
+        Beginner
+      </span>
+    </div>
+
+    <h3 class="font-h1 text-h1 text-on-surface mb-2">The First Coffee</h3>
+    <p class="font-body-md text-on-surface-variant line-clamp-2">
+      Emma visits a small café for the first time and discovers the simple joy of her morning coffee.
+    </p>
+  </div>
+
+  <div class="mt-6 flex items-center justify-between">
+    <span class="text-sm font-label-caps text-on-surface-variant">4 min read</span>
+
+    <a href="coffee.html"
+      class="flex items-center gap-2 bg-primary-container text-white px-6 py-2 rounded-xl font-bold chunky-button-shadow">
+      Start
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
 </div>
 </main>
 <!-- Bottom Nav for Mobile -->

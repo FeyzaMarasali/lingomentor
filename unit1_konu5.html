@@ -36,24 +36,86 @@ tailwind.config = {
 <body class="bg-surface font-lexend text-gray-800 overflow-x-hidden">
 
 <!-- SIDEBAR -->
-<aside class="fixed left-0 top-0 h-full w-64 p-4 bg-white border-r hidden md:block">
-
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-40 bg-white border-r-2 border-gray-200 hidden md:block">
 <div class="mb-8 px-4 flex flex-col items-start">
-<img 
-  src="https://lh3.googleusercontent.com/aida/ADBb0ugqoMdclVP7okd0IID62CMKZxpLo-k0Y-_u6PhgnJ-bLPdTDM1XL0NkcJps-9uC0ayghnOHT15clUxFdA7VFuIK6-78v1TelD48PERG1EctHVXLbDKU5WaUqb7zFysMa42pmldlvb93cJE8qFKmjiSdeUYjkxZhvnAN7G-MOMbddjatzZhh9-wGhqsEc8dGwiMOpKvrfXHQpAiX6TKiX42UURjRD1osY4nLIp0Vdv6v1o-h66ykFLruHJ6P"
-  class="w-14 h-14 mb-2"
-  alt="logo"
-/>
-<h1 class="text-2xl font-black text-primary-container">LINGOMENTOR</h1>
+<img alt="LingoMentor Logo" class="w-16 h-16 mb-2"
+src="https://lh3.googleusercontent.com/aida/ADBb0ugqoMdclVP7okd0IID62CMKZxpLo-k0Y-_u6PhgnJ-bLPdTDM1XL0NkcJps-9uC0ayghnOHT15clUxFdA7VFuIK6-78v1TelD48PERG1EctHVXLbDKU5WaUqb7zFysMa42pmldlvb93cJE8qFKmjiSdeUYjkxZhvnAN7G-MOMbddjatzZhh9-wGhqsEc8dGwiMOpKvrfXHQpAiX6TKiX42UURjRD1osY4nLIp0Vdv6v1o-h66ykFLruHJ6P"/>
+
+<h1 class="text-2xl font-black text-primary-container tracking-tighter uppercase font-lexend">
+LINGOMENTOR
+</h1>
 </div>
 
 <nav class="flex flex-col gap-2">
-<a class="px-4 py-3 text-gray-500" href="ilerleme_paneli.html">Home</a>
-<a class="px-4 py-3 bg-green-50 text-green-600 rounded-xl" href="learn_anasayfa.html">Learn</a>
-<a class="px-4 py-3 text-gray-500">Practice</a>
+
+<!-- HOME -->
+<a class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition-all duration-200"
+href="ilerleme_paneli.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend font-bold">Home</span>
+</a>
+
+<!-- LEARN -->
+<a class="flex items-center gap-4 px-4 py-3 bg-green-50 text-green-600 rounded-xl border-2 border-green-600"
+href="learn_anasayfa.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-lexend font-bold">Learn</span>
+</a>
+
+<!-- ================= PRACTICE DROPDOWN ================= -->
+<div>
+
+  <!-- MAIN BUTTON -->
+  <button id="practiceBtn"
+    class="flex items-center justify-between w-full gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition-all duration-200">
+
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined">fitness_center</span>
+      <span class="font-lexend font-bold">Practice</span>
+    </div>
+
+    <span id="practiceArrow" class="material-symbols-outlined transition-transform">
+      expand_more
+    </span>
+
+  </button>
+
+  <!-- SUB MENU -->
+  <div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+
+    <a href="reading.html"
+      class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+      Reading
+    </a>
+
+    <a href="vocabulary.html"
+      class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+      Vocabulary
+    </a>
+
+  </div>
+</div>
+
 </nav>
 
+
+
 </aside>
+
+<!-- ================= JS (dropdown çalışması için) ================= -->
+<script>
+const btn = document.getElementById("practiceBtn");
+const menu = document.getElementById("practiceMenu");
+const arrow = document.getElementById("practiceArrow");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+});
+</script>
+
+
 
 <!-- HEADER -->
 <header class="fixed top-0 left-0 md:left-64 right-0 bg-white border-b px-6 py-3 z-40">

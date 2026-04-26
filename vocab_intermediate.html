@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: Lexend; }
+.word { cursor: pointer; }
+.popup {
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  width:320px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body class="bg-blue-50 min-h-screen p-10">
+
+<a href="vocabulary.html" class="bg-blue-500 text-white px-4 py-2 rounded-xl font-bold">← Back</a>
+
+<h1 class="text-3xl font-black mt-6 mb-6">Intermediate Vocabulary</h1>
+
+<div class="grid md:grid-cols-4 gap-4">
+
+<script>
+const words = [
+["analyze","Examine carefully","We analyze data daily."],
+["predict","Say future outcome","We predict results."],
+["develop","Grow or improve","She develops apps."],
+["environment","Surroundings","Protect the environment."],
+["decision","Choice","I made a decision."],
+["efficient","Working well","This method is efficient."],
+["strategy","Plan","We need a strategy."],
+["communication","Sharing info","Good communication matters."],
+["challenge","Difficult task","This is a challenge."],
+["opportunity","Chance","A great opportunity."],
+["experience","Knowledge gained","I have experience."],
+["improve","Make better","Improve your skills."],
+["increase","Become more","Prices increase."],
+["reduce","Make less","Reduce waste."],
+["important","Significant","This is important."],
+["system","Organized plan","Computer system."],
+["technology","Tech tools","Modern technology."],
+["research","Study deeply","Scientific research."],
+["support","Help","We support each other."],
+["achieve","Reach goal","Achieve success."],
+["benefit","Good effect","Health benefits."],
+["community","Group of people","Local community."],
+["culture","Way of life","Different culture."],
+["economy","Financial system","Strong economy."],
+["global","Worldwide","Global problem."],
+["local","Nearby","Local shop."],
+["network","Connected system","Social network."],
+["resource","Useful supply","Natural resources."],
+["solution","Answer","Find solution."],
+["issue","Problem","Serious issue."],
+["focus","Concentrate","Focus on work."],
+["create","Make something","Create design."],
+["design","Plan structure","Modern design."],
+["impact","Effect","Big impact."],
+["result","Outcome","Good result."],
+["process","Steps","Learning process."],
+["method","Way","Study method."],
+["project","Work task","School project."],
+["data","Information","Analyze data."],
+["goal","Aim","My goal is success."],
+["plan","Idea for future","Make a plan."],
+["skill","Ability","Improve skill."],
+["train","Practice","Train daily."],
+["learn","Gain knowledge","Learn English."],
+["teach","Give knowledge","Teach students."],
+["work","Job/activity","Hard work."],
+["team","Group","Team effort."],
+["lead","Guide","Lead the team."],
+["grow","Increase","Grow business."],
+["change","Become different","Change habits."]
+];
+
+document.write(words.map(w =>
+`<div class="word bg-white p-3 rounded-xl shadow" onclick="show('${w[0]}','${w[1]}','${w[2]}')">
+${w[0]}
+</div>`
+).join(""));
+</script>
+
+</div>
+
+<div id="popup" class="popup">
+<h2 id="title" class="font-bold text-xl"></h2>
+<p id="meaning" class="mt-2"></p>
+<p id="example" class="mt-2 text-gray-600"></p>
+<button onclick="closePopup()" class="mt-4 bg-red-400 text-white px-3 py-1 rounded">Close</button>
+</div>
+
+<script>
+function show(word, meaning, example){
+  document.getElementById("title").innerText = word;
+  document.getElementById("meaning").innerText = meaning;
+  document.getElementById("example").innerText = example;
+  document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>

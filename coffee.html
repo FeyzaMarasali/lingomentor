@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet"/>
+
+<script id="tailwind-config">
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#2b6c00",
+        "primary-container": "#58cc02",
+        background: "#faf9f8",
+        "on-surface": "#1a1c1b",
+        "on-surface-variant": "#3f4a36",
+        "surface-container-highest": "#e3e2e1"
+      }
+    }
+  }
+}
+</script>
+
+<style>
+body {
+  font-family: 'Lexend', sans-serif;
+}
+
+.btn-3d {
+  box-shadow: 0 4px 0 #1e5000;
+}
+
+.btn-3d:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 0 #1e5000;
+}
+</style>
+
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col items-center">
+
+<main class="w-full max-w-2xl px-5 py-10 flex flex-col items-center">
+
+<!-- IMAGE -->
+<div class="w-full aspect-video rounded-3xl overflow-hidden mb-10 border-2 border-surface-container-highest">
+  <img 
+    class="w-full h-full object-cover"
+    src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+    alt="Coffee shop morning"
+  />
+</div>
+
+<!-- TITLE -->
+<h1 class="text-center font-extrabold text-4xl mb-8 tracking-tight leading-tight">
+The First Coffee
+</h1>
+
+<!-- STORY -->
+<div class="space-y-6 text-on-surface-variant text-lg leading-relaxed">
+
+<p>
+Emma wakes up early on a quiet morning. The streets are calm, and the air feels fresh. Today is special for her because she plans to visit a café for the first time.
+</p>
+
+<p>
+She walks slowly and finds a small coffee shop on the corner. The door opens with a soft sound, and the smell of coffee fills the air. It feels warm and welcoming inside.
+</p>
+
+<p>
+Emma looks at the menu and feels a little nervous. She has never ordered coffee before. The barista smiles and asks, “What would you like?” Emma takes a deep breath and says, “A latte, please.”
+</p>
+
+<p>
+She sits by the window and waits. Soon, her drink arrives in a simple white cup. She takes her first sip. The taste is smooth and warm. She smiles.
+</p>
+
+<p>
+In that moment, Emma feels happy. It is not just coffee. It is a new experience, a small step into something new. She looks outside and enjoys the quiet morning with her first coffee.
+</p>
+
+</div>
+
+<!-- BUTTON -->
+<div class="w-full mt-12">
+  <a href="reading.html"
+     class="w-full block text-center bg-primary-container text-white font-bold py-4 rounded-xl btn-3d">
+    Okumayı Bitir
+  </a>
+</div>
+
+</main>
+
+</body>
+</html>

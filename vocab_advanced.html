@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+
+<style>
+body { font-family: Lexend; }
+.word { cursor: pointer; }
+.popup {
+  display:none;
+  position:fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  background:white;
+  padding:20px;
+  border-radius:20px;
+  width:340px;
+  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+}
+</style>
+</head>
+
+<body class="bg-purple-50 min-h-screen p-10">
+
+<a href="vocabulary.html" class="bg-purple-500 text-white px-4 py-2 rounded-xl font-bold">← Back</a>
+
+<h1 class="text-3xl font-black mt-6 mb-6">Advanced Vocabulary</h1>
+
+<div class="grid md:grid-cols-4 gap-4">
+
+<script>
+const words = [
+["hypothesis","Scientific assumption","We tested a hypothesis."],
+["methodology","Study method","Research methodology."],
+["analysis","Deep examination","Data analysis."],
+["implementation","Execution of plan","System implementation."],
+["infrastructure","Basic system","City infrastructure."],
+["sustainability","Long-term balance","Sustainability matters."],
+["innovation","New idea","Technological innovation."],
+["optimization","Improving efficiency","System optimization."],
+["artificial intelligence","Machine intelligence","AI is growing fast."],
+["algorithm","Step-by-step process","Sorting algorithm."],
+["neural","Brain-related","Neural network."],
+["complex","Complicated","Complex system."],
+["significant","Important","Significant change."],
+["interpret","Explain meaning","Interpret data."],
+["evaluate","Assess value","Evaluate performance."],
+["derive","Obtain from","Derive formula."],
+["assumption","Belief without proof","Wrong assumption."],
+["theory","Explanation model","Scientific theory."],
+["framework","Structure system","Software framework."],
+["architecture","System design","Software architecture."],
+["parameter","Variable value","Model parameter."],
+["correlation","Relationship","Strong correlation."],
+["regression","Statistical method","Linear regression."],
+["dataset","Data collection","Large dataset."],
+["dimension","Measurement","High dimension."],
+["variable","Changeable factor","Key variable."],
+["constraint","Limitation","Time constraint."],
+["algorithmic","Related to algorithm","Algorithmic process."],
+["compute","Calculate","Compute results."],
+["simulate","Iimitate system","Simulate environment."],
+["structure","Organization","Data structure."],
+["mechanism","System process","Biological mechanism."],
+["dynamic","Changing","Dynamic system."],
+["static","Unchanging","Static data."],
+["frameworks","Multiple systems","Development frameworks."],
+["optimization","Improving system","Performance optimization."],
+["efficiency","Productivity level","High efficiency."],
+["scalability","Ability to grow","System scalability."],
+["robust","Strong system","Robust model."],
+["accuracy","Correctness","High accuracy."],
+["precision","Exactness","Precision matters."],
+["validation","Checking correctness","Model validation."],
+["training","Learning process","AI training."],
+["model","Representation","Machine learning model."],
+["prediction","Future estimate","Weather prediction."],
+["dataset bias","Skewed data","Bias in dataset."],
+["automation","Automatic process","Industrial automation."],
+["computational","Related to computing","Computational cost."],
+["inference","Conclusion","AI inference."]
+];
+
+document.write(words.map(w =>
+`<div class="word bg-white p-3 rounded-xl shadow" onclick="show('${w[0]}','${w[1]}','${w[2]}')">
+${w[0]}
+</div>`
+).join(""));
+</script>
+
+</div>
+
+<div id="popup" class="popup">
+<h2 id="title" class="font-bold text-xl"></h2>
+<p id="meaning" class="mt-2"></p>
+<p id="example" class="mt-2 text-gray-600"></p>
+<button onclick="closePopup()" class="mt-4 bg-red-400 text-white px-3 py-1 rounded">Close</button>
+</div>
+
+<script>
+function show(word, meaning, example){
+  document.getElementById("title").innerText = word;
+  document.getElementById("meaning").innerText = meaning;
+  document.getElementById("example").innerText = example;
+  document.getElementById("popup").style.display="block";
+}
+function closePopup(){
+  document.getElementById("popup").style.display="none";
+}
+</script>
+
+</body>
+</html>
