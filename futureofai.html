@@ -1,0 +1,165 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "secondary-fixed": "#c8e6ff",
+            "on-tertiary-container": "#574300",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f1f1ef",
+            "on-surface": "#1a1c1b",
+            "primary": "#2b6c00",
+            "on-primary-fixed": "#082100",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f4f3f2",
+            "on-secondary-container": "#004666",
+            "tertiary-container": "#ddad00",
+            "surface-container-high": "#e9e8e7",
+            "surface-container": "#eeeeec",
+            "background": "#faf9f8",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e3e2e1",
+            "secondary": "#006590",
+            "on-primary-fixed-variant": "#1f5100",
+            "primary-container": "#58cc02",
+            "on-tertiary-fixed": "#241a00",
+            "on-secondary-fixed": "#001e2e",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#1e5000",
+            "on-surface-variant": "#3f4a36",
+            "secondary-container": "#2fb8ff",
+            "inverse-primary": "#6be026",
+            "tertiary": "#755b00",
+            "surface-tint": "#2b6c00",
+            "surface-bright": "#faf9f8",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#004c6e",
+            "outline": "#6f7b64",
+            "on-background": "#1a1c1b",
+            "primary-fixed": "#87fe45",
+            "surface-container-highest": "#e3e2e1",
+            "inverse-surface": "#2f3130",
+            "tertiary-fixed-dim": "#f4bf00",
+            "secondary-fixed-dim": "#88ceff",
+            "primary-fixed-dim": "#6be026",
+            "surface-dim": "#dadad9",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#faf9f8",
+            "tertiary-fixed": "#ffdf92",
+            "outline-variant": "#becbb1",
+            "on-tertiary-fixed-variant": "#594400"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "4px",
+            "xs": "4px",
+            "xl": "32px",
+            "gutter": "16px",
+            "sm": "8px",
+            "md": "16px",
+            "margin-mobile": "20px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "h1": ["Lexend"],
+            "label-caps": ["Lexend"],
+            "body-lg": ["Lexend"],
+            "h2": ["Lexend"],
+            "body-md": ["Lexend"],
+            "display": ["Lexend"]
+          },
+          "fontSize": {
+            "h1": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-caps": ["14px", {"lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "h2": ["20px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .text-shadow-3d {
+      text-shadow: 0 2px 0 rgba(0,0,0,0.1);
+    }
+    .btn-3d {
+      box-shadow: 0 4px 0 #1e5000;
+    }
+    .btn-3d:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #1e5000;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center">
+
+<main class="w-full max-w-2xl px-margin-mobile py-xl flex-grow flex flex-col items-center">
+<!-- Hero Image Area -->
+<!-- Hero Illustration -->
+<div class="mb-xl rounded-[2rem] overflow-hidden border-[3px] border-surface-container-highest bg-white shadow-[0_8px_0_0_#eeeeec]">
+  <img 
+    class="w-full h-64 object-cover"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJYm5JRKBIUAoiFN3NmbxN5JTpG3qLpi6TSip2ruCFutqaC608Dsp1aOYJ3T8U4vFdJtCfh6zmHfeZKmc3GN7D0qvboFhOldd0bdlWKxQ-bmXPxtmX2EiWwA_TCGEKqcytIITKTwxzEb2Y1rJTv2ZwWCscnq7Eg82LHcPqeRnWt8WxuSZpQXxA0920ufWnMhYOmw_RTHBtmHW4eTglBGUlTUcW5EWhKUZbxUzRaohbwqJsK7Q47Qwk2atNk9UqBDLEV8ZAa_f9fvOe"
+    alt="Future of AI"
+  />
+</div>
+<!-- Content Section -->
+<article class="w-full flex flex-col gap-lg">
+<h1 class="font-display text-display text-center text-on-background mb-sm">
+        Future of ai
+      </h1>
+<div class="space-y-md text-on-surface-variant font-body-lg">
+<p></p>
+Artificial Intelligence (AI) is rapidly evolving beyond a mere technological tool into a foundational layer that reshapes how societies function, make decisions, and innovate. Its integration into complex systems is not only optimizing efficiency but also redefining the boundaries between human cognition and machine capability.
+
+
+<p>
+One of the most transformative aspects of AI lies in its ability to process and interpret vast amounts of data with unprecedented speed and accuracy. Advanced machine learning models, particularly deep neural networks, are now capable of identifying patterns that remain invisible to human analysts. This has led to breakthroughs in fields such as healthcare, where early diagnosis and predictive analytics are becoming increasingly reliable.
+</p>
+
+<p>
+However, the future of AI is not solely defined by technological progress. Ethical considerations, including data privacy, algorithmic bias, and accountability, are becoming central to its development. As AI systems gain more autonomy, ensuring transparency and fairness in decision-making processes will be critical to maintaining public trust.
+</p>
+
+<p>
+Another significant shift is the emergence of human-AI collaboration. Rather than replacing human intelligence, AI is augmenting it. In professional environments, AI-driven tools assist in complex problem-solving, creative design, and strategic planning. This synergy enables individuals to focus on higher-level thinking while delegating repetitive or data-intensive tasks to machines.
+</p>
+
+<p>
+Looking ahead, the concept of Artificial General Intelligence (AGI) represents both an opportunity and a challenge. While AGI could potentially solve some of humanity’s most pressing problems, it also raises profound questions about control, safety, and the long-term impact on the workforce and global economy.
+</p>
+
+<p>
+Ultimately, the future of AI will depend on how effectively humanity can balance innovation with responsibility. The goal is not merely to build smarter machines, but to create systems that align with human values, enhance quality of life, and contribute to a sustainable and equitable future.
+</p>
+
+</div>
+</article>
+<!-- Final Action Button -->
+<div class="w-full mt-xl mb-xl">
+<a href="reading.html" class="w-full block text-center bg-primary-container text-on-primary-container font-h1 py-lg rounded-xl btn-3d transition-transform active:translate-y-0.5">
+  Okumayı Bitir
+</a>
+</div>
+</main>
+<!-- Bottom Nav Suppressed for Transactional/Focused Reading Page as per Brand Anchor rules -->
+</body></html>
