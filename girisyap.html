@@ -117,7 +117,7 @@ document.getElementById("loginForm").addEventListener("submit", (e) => {
   signInWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Giriş başarılı!");
-      window.location.href = "index.html";
+      window.location.href = "ilerleme_paneli.html";
     })
     .catch((error) => {
       alert(error.message);
@@ -130,7 +130,7 @@ document.getElementById("googleLogin").addEventListener("click", () => {
   signInWithPopup(auth, provider)
     .then(() => {
       alert("Google ile giriş başarılı!");
-      window.location.href = "index.html";
+      window.location.href = "ilerleme_paneli.html";
     })
     .catch((error) => {
       alert(error.message);
