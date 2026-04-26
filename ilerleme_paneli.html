@@ -145,26 +145,94 @@
 </div>
 </header>
 <!-- SideNavBar (Desktop Only) -->
-<aside class="hidden md:flex fixed left-0 top-0 h-full w-64 border-r-2 border-gray-200 dark:border-gray-800 flex-col py-6 gap-2 bg-white dark:bg-gray-950 z-40">
-<div class="font-black text-[#58CC02] mb-8 px-4">
-<div class="flex flex-col items-start gap-2">
-<img alt="LingoMentor Mascot" class="w-16 h-16 object-contain ml-[-10px]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb4bZ0DFfTjd2I_rRkUnL9Fcpu62g3LrC2bC5yRFaiMdDF4tyIjm7KJvj7Pbrq8cws8ywhvCMob37hBqFGq-K27rHPVujpDIW0LN4dMg5lQcY6fbm5rtFTuENNHOZa-RQlGvwRTTINjmY7PBx0A3Pd7u7jM5X6uXN_RgAW-byeuscydd2p9zLOZ-1QyPeyV298UwYxM5f7jP6M-NEGLPtR6pbW8V6BsIlQoAcvhLBGGx2qJrOiViYsjh3ZYhDx3glUnFRVsGuWS5V"/>
-<span class="text-2xl tracking-tight">LingoMentor</span>
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-40 bg-white border-r-2 border-gray-200 hidden md:block">
+<div class="mb-8 px-4 flex flex-col items-start">
+<img alt="LingoMentor Logo" class="w-16 h-16 mb-2"
+src="https://lh3.googleusercontent.com/aida/ADBb0ugqoMdclVP7okd0IID62CMKZxpLo-k0Y-_u6PhgnJ-bLPdTDM1XL0NkcJps-9uC0ayghnOHT15clUxFdA7VFuIK6-78v1TelD48PERG1EctHVXLbDKU5WaUqb7zFysMa42pmldlvb93cJE8qFKmjiSdeUYjkxZhvnAN7G-MOMbddjatzZhh9-wGhqsEc8dGwiMOpKvrfXHQpAiX6TKiX42UURjRD1osY4nLIp0Vdv6v1o-h66ykFLruHJ6P"/>
+
+<h1 class="text-2xl font-black text-primary-container tracking-tighter uppercase font-lexend">
+LINGOMENTOR
+</h1>
+</div>
+
+<nav class="flex flex-col gap-2">
+
+<!-- HOME -->
+<a class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition-all duration-200"
+href="ilerleme_paneli.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-lexend font-bold">Home</span>
+</a>
+
+<!-- LEARN -->
+<a class="flex items-center gap-4 px-4 py-3 bg-green-50 text-green-600 rounded-xl border-2 border-green-600"
+href="learn_anasayfa.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">school</span>
+<span class="font-lexend font-bold">Learn</span>
+</a>
+
+<!-- ================= PRACTICE DROPDOWN ================= -->
+<div>
+
+  <!-- MAIN BUTTON -->
+  <button id="practiceBtn"
+    class="flex items-center justify-between w-full gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition-all duration-200">
+
+    <div class="flex items-center gap-4">
+      <span class="material-symbols-outlined">fitness_center</span>
+      <span class="font-lexend font-bold">Practice</span>
+    </div>
+
+    <span id="practiceArrow" class="material-symbols-outlined transition-transform">
+      expand_more
+    </span>
+
+  </button>
+
+  <!-- SUB MENU -->
+  <div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+
+    <a href="reading.html"
+      class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+      Reading
+    </a>
+
+    <a href="vocabulary.html"
+      class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+      Vocabulary
+    </a>
+
+  </div>
+</div>
+
+</nav>
+
+<!-- PROFILE / SETTINGS -->
+<div class="absolute bottom-4 left-4 right-4 pt-4 border-t-2 border-gray-100">
+<div class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl cursor-pointer">
+<span class="material-symbols-outlined">person</span>
+<span class="font-lexend font-bold">Profile</span>
+</div>
+
+<div class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl cursor-pointer">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-lexend font-bold">Settings</span>
 </div>
 </div>
-<a class="bg-[#DDF4FF] dark:bg-blue-900/30 text-[#1CB0F6] border-2 border-[#84D8FF] rounded-xl mx-2 py-3 px-4 flex items-center gap-4 active:scale-95 transition-all bg-[#DDF4FF] dark:bg-blue-900/30 text-[#1CB0F6] border-2 border-[#84D8FF]" href="ilerleme_paneli">
-<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
-<span class="font-['Lexend'] font-extrabold uppercase tracking-widest text-xs">Ana Sayfa</span>
-</a>
-<a class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl mx-2 py-3 px-4 flex items-center gap-4 transition-all active:scale-95 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800" href="learn_anasayfa.html">
-<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
-<span class="font-['Lexend'] font-extrabold uppercase tracking-widest text-xs">Öğren</span>
-</a>
-<a class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl mx-2 py-3 px-4 flex items-center gap-4 transition-all active:scale-95" href="{{DATA:SCREEN:SCREEN_35}}">
-<span class="material-symbols-outlined text-2xl" data-icon="fitness_center">fitness_center</span>
-<span class="font-['Lexend'] font-extrabold uppercase tracking-widest text-xs">Pratik</span>
-</a>
 </aside>
+
+<!-- ================= JS (dropdown çalışması için) ================= -->
+<script>
+const btn = document.getElementById("practiceBtn");
+const menu = document.getElementById("practiceMenu");
+const arrow = document.getElementById("practiceArrow");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+});
+</script>
 <!-- Main Content Area -->
 <main class="md:ml-64 min-h-screen">
 <div class="max-w-4xl mx-auto px-6 py-8 flex flex-col md:flex-row gap-10">
