@@ -1,0 +1,148 @@
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "error": "#ba1a1a",
+            "secondary-fixed": "#c8e6ff",
+            "on-tertiary-container": "#574300",
+            "on-error-container": "#93000a",
+            "inverse-on-surface": "#f1f1ef",
+            "on-surface": "#1a1c1b",
+            "primary": "#2b6c00",
+            "on-primary-fixed": "#082100",
+            "on-tertiary": "#ffffff",
+            "surface-container-low": "#f4f3f2",
+            "on-secondary-container": "#004666",
+            "tertiary-container": "#ddad00",
+            "surface-container-high": "#e9e8e7",
+            "surface-container": "#eeeeec",
+            "background": "#faf9f8",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e3e2e1",
+            "secondary": "#006590",
+            "on-primary-fixed-variant": "#1f5100",
+            "primary-container": "#58cc02",
+            "on-tertiary-fixed": "#241a00",
+            "on-secondary-fixed": "#001e2e",
+            "on-secondary": "#ffffff",
+            "on-primary-container": "#1e5000",
+            "on-surface-variant": "#3f4a36",
+            "secondary-container": "#2fb8ff",
+            "inverse-primary": "#6be026",
+            "tertiary": "#755b00",
+            "surface-tint": "#2b6c00",
+            "surface-bright": "#faf9f8",
+            "on-error": "#ffffff",
+            "on-secondary-fixed-variant": "#004c6e",
+            "outline": "#6f7b64",
+            "on-background": "#1a1c1b",
+            "primary-fixed": "#87fe45",
+            "surface-container-highest": "#e3e2e1",
+            "inverse-surface": "#2f3130",
+            "tertiary-fixed-dim": "#f4bf00",
+            "secondary-fixed-dim": "#88ceff",
+            "primary-fixed-dim": "#6be026",
+            "surface-dim": "#dadad9",
+            "on-primary": "#ffffff",
+            "surface-container-lowest": "#ffffff",
+            "surface": "#faf9f8",
+            "tertiary-fixed": "#ffdf92",
+            "outline-variant": "#becbb1",
+            "on-tertiary-fixed-variant": "#594400"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "4px",
+            "xs": "4px",
+            "xl": "32px",
+            "gutter": "16px",
+            "sm": "8px",
+            "md": "16px",
+            "margin-mobile": "20px",
+            "lg": "24px"
+          },
+          "fontFamily": {
+            "h1": ["Lexend"],
+            "label-caps": ["Lexend"],
+            "body-lg": ["Lexend"],
+            "h2": ["Lexend"],
+            "body-md": ["Lexend"],
+            "display": ["Lexend"]
+          },
+          "fontSize": {
+            "h1": ["24px", {"lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "label-caps": ["14px", {"lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "h2": ["20px", {"lineHeight": "26px", "letterSpacing": "0em", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "22px", "letterSpacing": "0em", "fontWeight": "500"}],
+            "display": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .text-shadow-3d {
+      text-shadow: 0 2px 0 rgba(0,0,0,0.1);
+    }
+    .btn-3d {
+      box-shadow: 0 4px 0 #1e5000;
+    }
+    .btn-3d:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #1e5000;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center">
+
+<main class="w-full max-w-2xl px-margin-mobile py-xl flex-grow flex flex-col items-center">
+<!-- Hero Image Area -->
+<div class="w-full aspect-video rounded-3xl overflow-hidden mb-xl border-2 border-surface-container-highest bg-surface-container-low">
+<img alt="Paris Landscape" class="w-full h-full object-cover" data-alt="Dreamy watercolor illustration of the Eiffel Tower framed by pink cherry blossoms under a soft morning sun in Paris" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4dykqn0KAi2Kmuznmd7y39M6XH8yQCi0r6y-T7_o_A0T-wEE31KVaU7PlVVNTDupw3MqHHG6gt7OrvzCIE3-3LiRPjtuK9_p8XVKFYEBJwEBKAoOypzZ8cz4BqRITDdFRccvXZRtG_kzYyBs_Aqkvxqubm_4-hWomIEb2EjfCi-x5ZaQJuy7VJXydf-LS6klyTa7WL40Q8dajEMOZncdag1c5x0ICUiQuvpNsEgMHo1Q0AAobz1_5OTAaRDqN7T72aGsvpMLZWCZt"/>
+</div>
+<!-- Content Section -->
+<article class="w-full flex flex-col gap-lg">
+<h1 class="font-display text-display text-center text-on-background mb-sm">
+        A Day in Paris
+      </h1>
+<div class="space-y-md text-on-surface-variant font-body-lg">
+<p>
+          The sun rises gently over the Seine, casting a golden glow on the limestone buildings of the Marais. Your morning begins in a local boulangerie, where the intoxicating aroma of fresh buttery croissants fills the air. You order a "café au lait" and find a small table on the sidewalk to watch the city wake up.
+        </p>
+<p>
+          As midday approaches, you stroll through the Jardin des Tuileries. The perfectly manicured paths lead you toward the Louvre Museum, where history and art collide under the iconic glass pyramid. The atmosphere is vibrant, filled with the soft chatter of students and the distant sound of an accordion player near the riverbanks.
+        </p>
+<p>
+          By afternoon, you find yourself wandering the winding cobblestone streets of Montmartre. Artists paint portraits in the Place du Tertre, capturing the bohemian spirit that has defined this hilltop neighborhood for centuries. From the steps of the Sacré-Cœur, the entire city unfolds beneath you like a living map of memories.
+        </p>
+<p>
+          As the evening lights begin to twinkle, you settle into a cozy bistro for dinner. The sound of glasses clinking and the rhythmic cadence of the French language create a melody of their own. Under the starlit sky, the Eiffel Tower sparkles every hour, a reminder that in Paris, every moment is a piece of art waiting to be noticed.
+        </p>
+</div>
+</article>
+<!-- Final Action Button -->
+<div class="w-full mt-xl mb-xl">
+<a href="reading.html" class="w-full block text-center bg-primary-container text-on-primary-container font-h1 py-lg rounded-xl btn-3d transition-transform active:translate-y-0.5">
+  Okumayı Bitir
+</a>
+</div>
+</main>
+<!-- Bottom Nav Suppressed for Transactional/Focused Reading Page as per Brand Anchor rules -->
+</body></html>
