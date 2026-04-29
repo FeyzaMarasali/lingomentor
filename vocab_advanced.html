@@ -1,116 +1,236 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 <style>
 body { font-family: Lexend; }
-.word { cursor: pointer; }
-.popup {
-  display:none;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:white;
-  padding:20px;
-  border-radius:20px;
-  width:340px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+
+.card {
+  box-shadow: 0 10px 0 #e5e5e5;
+  cursor: pointer;
+}
+.card:active {
+  transform: translateY(5px);
+  box-shadow: none;
 }
 </style>
 </head>
 
-<body class="bg-purple-50 min-h-screen p-10">
+<body class="bg-yellow-50">
 
-<a href="vocabulary.html" class="bg-purple-500 text-white px-4 py-2 rounded-xl font-bold">← Back</a>
+<!-- TOP NAV -->
+<header class="hidden md:flex bg-white border-b-2 border-gray-200 sticky top-0 z-50 md:ml-64">
+<div class="flex justify-end items-center h-16 px-6 w-full gap-6">
 
-<h1 class="text-3xl font-black mt-6 mb-6">Advanced Vocabulary</h1>
+<div class="flex items-center gap-1 text-[#FF9600] font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_fire_department</span>
+14
+</div>
 
-<div class="grid md:grid-cols-4 gap-4">
+<div class="flex items-center gap-1 text-[#1CB0F6] font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">diamond</span>
+1250
+</div>
+
+<img class="w-8 h-8 rounded-full border-2 border-gray-200"
+src="https://i.pravatar.cc/40"/>
+</div>
+</header>
+
+<!-- SIDEBAR -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-50 bg-white border-r-2 border-gray-200 hidden md:block">
+
+<div class="mb-8 px-4 flex flex-col items-start">
+<img class="w-16 h-16 mb-2"
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb4bZ0DFfTjd2I_rRkUnL9Fcpu62g3LrC2bC5yRFaiMdDF4tyIjm7KJvj7Pbrq8cws8ywhvCMob37hBqFGq-K27rHPVujpDIW0LN4dMg5lQcY6fbm5rtFTuENNHOZa-RQlGvwRTTINjmY7PBx0A3Pd7u7jM5X6uXN_RgAW-byeuscydd2p9zLOZ-1QyPeyV298UwYxM5f7jP6M-NEGLPtR6pbW8V6BsIlQoAcvhLBGGx2qJrOiViYsjh3ZYhDx3glUnFRVsGuWS5V"/>
+
+<h1 class="text-2xl font-black text-[#58CC02] tracking-tight uppercase">
+LINGOMENTOR
+</h1>
+</div>
+
+<nav class="flex flex-col gap-2">
+
+<a href="ilerleme_paneli.html"
+class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl">
+<span class="material-symbols-outlined">home</span>Home
+</a>
+
+<a href="learn_anasayfa.html"
+class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl">
+<span class="material-symbols-outlined">school</span>Learn
+</a>
+
+<div>
+<button id="practiceBtn"
+class="flex items-center justify-between w-full px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl">
+
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">fitness_center</span>Practice
+</div>
+
+<span id="practiceArrow" class="material-symbols-outlined">expand_more</span>
+</button>
+
+<div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+
+<a href="reading.html"
+class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+Reading
+</a>
+
+<a href="vocabulary.html"
+class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+Vocabulary
+</a>
+
+</nav>
+</aside>
+
+<!-- MAIN -->
+<div class="md:ml-64 relative z-0 flex flex-col items-center justify-center min-h-screen p-6">
+
+<h1 class="text-3xl font-black mb-6">Kelime Kartları</h1>
+
+<div id="card" class="card bg-white w-full max-w-md h-80 rounded-3xl flex flex-col items-center justify-center text-center p-6">
+
+<h2 id="word" class="text-4xl font-black"></h2>
+
+<button onclick="speak(event)" class="mt-4 bg-blue-400 text-white px-4 py-2 rounded-xl">
+🔊 Dinle
+</button>
+
+<p id="hint" class="mt-6 text-gray-500 italic">Dokun → anlamı gör</p>
+
+</div>
+
+<div class="mt-6 text-center">
+<p id="example" class="text-gray-600"></p>
+</div>
+
+<div class="mt-6 flex gap-4">
+<button onclick="prev()" class="bg-gray-300 px-4 py-2 rounded-xl">← Geri</button>
+<button onclick="next()" class="bg-green-400 text-white px-4 py-2 rounded-xl">İleri →</button>
+</div>
+
+</div>
 
 <script>
 const words = [
-["hypothesis","Scientific assumption","We tested a hypothesis."],
-["methodology","Study method","Research methodology."],
-["analysis","Deep examination","Data analysis."],
-["implementation","Execution of plan","System implementation."],
-["infrastructure","Basic system","City infrastructure."],
-["sustainability","Long-term balance","Sustainability matters."],
-["innovation","New idea","Technological innovation."],
-["optimization","Improving efficiency","System optimization."],
-["artificial intelligence","Machine intelligence","AI is growing fast."],
-["algorithm","Step-by-step process","Sorting algorithm."],
-["neural","Brain-related","Neural network."],
-["complex","Complicated","Complex system."],
-["significant","Important","Significant change."],
-["interpret","Explain meaning","Interpret data."],
-["evaluate","Assess value","Evaluate performance."],
-["derive","Obtain from","Derive formula."],
-["assumption","Belief without proof","Wrong assumption."],
-["theory","Explanation model","Scientific theory."],
-["framework","Structure system","Software framework."],
-["architecture","System design","Software architecture."],
-["parameter","Variable value","Model parameter."],
-["correlation","Relationship","Strong correlation."],
-["regression","Statistical method","Linear regression."],
-["dataset","Data collection","Large dataset."],
-["dimension","Measurement","High dimension."],
-["variable","Changeable factor","Key variable."],
-["constraint","Limitation","Time constraint."],
-["algorithmic","Related to algorithm","Algorithmic process."],
-["compute","Calculate","Compute results."],
-["simulate","Iimitate system","Simulate environment."],
-["structure","Organization","Data structure."],
-["mechanism","System process","Biological mechanism."],
-["dynamic","Changing","Dynamic system."],
-["static","Unchanging","Static data."],
-["frameworks","Multiple systems","Development frameworks."],
-["optimization","Improving system","Performance optimization."],
-["efficiency","Productivity level","High efficiency."],
-["scalability","Ability to grow","System scalability."],
-["robust","Strong system","Robust model."],
-["accuracy","Correctness","High accuracy."],
-["precision","Exactness","Precision matters."],
-["validation","Checking correctness","Model validation."],
-["training","Learning process","AI training."],
-["model","Representation","Machine learning model."],
-["prediction","Future estimate","Weather prediction."],
-["dataset bias","Skewed data","Bias in dataset."],
-["automation","Automatic process","Industrial automation."],
-["computational","Related to computing","Computational cost."],
-["inference","Conclusion","AI inference."]
+["ubiquitous","her yerde bulunan","Smartphones are ubiquitous in modern life."],
+["meticulous","çok titiz","She is meticulous about her work."],
+["resilient","dayanıklı","Children are often very resilient."],
+["cognitive","bilişsel","Cognitive skills improve with practice."],
+["paradigm","paradigma","This is a new scientific paradigm."],
+["contemplate","derin düşünmek","He began to contemplate his future."],
+["hypothesis","hipotez","The hypothesis was proven correct."],
+["viable","uygulanabilir","This is a viable solution."],
+["obsolete","modası geçmiş","This technology is obsolete."],
+["implication","çıkarım","The implication is serious."],
+["notion","kavram","He rejected the notion completely."],
+["threshold","eşik","We are at the threshold of change."],
+["coherent","tutarlı","His argument is not coherent."],
+["inherent","doğasında olan","Risk is inherent in business."],
+["ambiguity","belirsizlik","There is ambiguity in the text."],
+["deteriorate","bozulmak","The situation may deteriorate."],
+["enhance","geliştirmek","This will enhance performance."],
+["substantial","önemli, büyük","There is a substantial difference."],
+["allocate","tahsis etmek","Resources are allocated fairly."],
+["diminish","azalmak","His interest began to diminish."],
+["comprehensive","kapsamlı","We need a comprehensive plan."],
+["controversial","tartışmalı","This is a controversial topic."],
+["feasible","gerçekleştirilebilir","The plan is feasible."],
+["consequence","sonuç","Every action has consequences."],
+["rigorous","titiz, sıkı","They followed a rigorous process."],
+["sustainable","sürdürülebilir","We need sustainable energy."],
+["sophisticated","sofistike","It is a sophisticated system."],
+["intricate","karmaşık","The design is intricate."],
+["assert","iddia etmek","He asserted his opinion strongly."],
+["bias","önyargı","We must avoid bias."],
+["derive","türemek","This word derives from Latin."],
+["elaborate","detaylandırmak","Please elaborate your idea."],
+["facilitate","kolaylaştırmak","This tool facilitates learning."],
+["interpret","yorumlamak","How do you interpret this?"],
+["legitimate","meşru","That is a legitimate concern."],
+["manipulate","yönlendirmek","He tried to manipulate data."],
+["overwhelm","bunaltmak","The workload overwhelmed him."],
+["perceive","algılamak","People perceive things differently."],
+["plausible","mantıklı","That explanation is plausible."],
+["relevant","ilgili","This is relevant information."],
+["scrutinize","detaylı incelemek","They scrutinized the report."],
+["validate","doğrulamak","We need to validate the data."],
+["coincide","çakışmak","The events coincide perfectly."],
+["diverse","çeşitli","The class is diverse."],
+["fundamental","temel","This is a fundamental principle."],
+["impactful","etkili","It was an impactful speech."],
+["noteworthy","dikkate değer","A noteworthy achievement."],
+["persistent","ısrarcı","He is very persistent."],
+["prevail","galip gelmek","Justice will prevail."],
+["transition","geçiş","We are in transition period."]
 ];
 
-document.write(words.map(w =>
-`<div class="word bg-white p-3 rounded-xl shadow" onclick="show('${w[0]}','${w[1]}','${w[2]}')">
-${w[0]}
-</div>`
-).join(""));
-</script>
+let index = 0;
+let flipped = false;
 
-</div>
+const wordEl = document.getElementById("word");
+const exampleEl = document.getElementById("example");
+const hintEl = document.getElementById("hint");
 
-<div id="popup" class="popup">
-<h2 id="title" class="font-bold text-xl"></h2>
-<p id="meaning" class="mt-2"></p>
-<p id="example" class="mt-2 text-gray-600"></p>
-<button onclick="closePopup()" class="mt-4 bg-red-400 text-white px-3 py-1 rounded">Close</button>
-</div>
+function updateCard(){
+  const w = words[index];
 
-<script>
-function show(word, meaning, example){
-  document.getElementById("title").innerText = word;
-  document.getElementById("meaning").innerText = meaning;
-  document.getElementById("example").innerText = example;
-  document.getElementById("popup").style.display="block";
+  if(flipped){
+    wordEl.innerText = w[1];
+    exampleEl.innerText = w[2];
+    hintEl.innerText = "Tekrar dokun → kelimeyi gör";
+  } else {
+    wordEl.innerText = w[0];
+    exampleEl.innerText = "";
+    hintEl.innerText = "Dokun → anlamı gör";
+  }
 }
-function closePopup(){
-  document.getElementById("popup").style.display="none";
+
+document.getElementById("card").onclick = () => {
+  flipped = !flipped;
+  updateCard();
+};
+
+function next(){
+  index = (index + 1) % words.length;
+  flipped = false;
+  updateCard();
 }
+
+function prev(){
+  index = (index - 1 + words.length) % words.length;
+  flipped = false;
+  updateCard();
+}
+
+function speak(e){
+  e.stopPropagation();
+  const utterance = new SpeechSynthesisUtterance(words[index][0]);
+  utterance.lang = "en-US";
+  speechSynthesis.speak(utterance);
+}
+
+updateCard();
+
+// dropdown
+const btn = document.getElementById("practiceBtn");
+const menu = document.getElementById("practiceMenu");
+const arrow = document.getElementById("practiceArrow");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+});
 </script>
 
 </body>

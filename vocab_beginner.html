@@ -1,120 +1,249 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
-<meta charset="utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
 
 <style>
 body { font-family: Lexend; }
-.word { cursor: pointer; }
-.popup {
-  display:none;
-  position:fixed;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  background:white;
-  padding:20px;
-  border-radius:20px;
-  width:300px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.2);
+
+.card {
+  box-shadow: 0 10px 0 #e5e5e5;
+  cursor: pointer;
+}
+.card:active {
+  transform: translateY(5px);
+  box-shadow: none;
 }
 </style>
 </head>
 
-<body class="bg-yellow-50 min-h-screen p-10">
+<body class="bg-yellow-50">
 
-<a href="vocabulary.html" class="bg-yellow-400 text-white px-4 py-2 rounded-xl font-bold">← Back</a>
+<!-- TOP NAV -->
+<header class="hidden md:flex bg-white border-b-2 border-gray-200 sticky top-0 z-50 md:ml-64">
+<div class="flex justify-end items-center h-16 px-6 w-full gap-6">
 
-<h1 class="text-3xl font-black mt-6 mb-6">Beginner Vocabulary</h1>
+<div class="flex items-center gap-1 text-[#FF9600] font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">local_fire_department</span>
+14
+</div>
 
-<!-- WORD LIST -->
-<div class="grid md:grid-cols-4 gap-4">
+<div class="flex items-center gap-1 text-[#1CB0F6] font-bold">
+<span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1;">diamond</span>
+1250
+</div>
 
-<!-- 50 WORDS -->
+<img class="w-8 h-8 rounded-full border-2 border-gray-200"
+src="https://i.pravatar.cc/40"/>
+</div>
+</header>
+
+<!-- ================= SIDEBAR ================= -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-50 bg-white border-r-2 border-gray-200 hidden md:block">
+
+<div class="mb-8 px-4 flex flex-col items-start">
+<img class="w-16 h-16 mb-2"
+src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb4bZ0DFfTjd2I_rRkUnL9Fcpu62g3LrC2bC5yRFaiMdDF4tyIjm7KJvj7Pbrq8cws8ywhvCMob37hBqFGq-K27rHPVujpDIW0LN4dMg5lQcY6fbm5rtFTuENNHOZa-RQlGvwRTTINjmY7PBx0A3Pd7u7jM5X6uXN_RgAW-byeuscydd2p9zLOZ-1QyPeyV298UwYxM5f7jP6M-NEGLPtR6pbW8V6BsIlQoAcvhLBGGx2qJrOiViYsjh3ZYhDx3glUnFRVsGuWS5V"/>
+
+<h1 class="text-2xl font-black text-[#58CC02] tracking-tight uppercase">
+LINGOMENTOR
+</h1>
+</div>
+
+<nav class="flex flex-col gap-2">
+
+<!-- HOME -->
+<a href="ilerleme_paneli.html"
+class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+<span class="material-symbols-outlined">home</span>
+<span class="font-bold">Home</span>
+</a>
+
+<!-- LEARN -->
+<a href="learn_anasayfa.html"
+class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+<span class="material-symbols-outlined">school</span>
+<span class="font-bold">Learn</span>
+</a>
+
+<!-- PRACTICE -->
+<div>
+
+<button id="practiceBtn"
+class="flex items-center justify-between w-full px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined">fitness_center</span>
+<span class="font-bold">Practice</span>
+</div>
+
+<span id="practiceArrow" class="material-symbols-outlined transition-transform">
+expand_more
+</span>
+
+</button>
+
+<!-- SUB MENU -->
+<div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+
+<a href="reading.html"
+class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+Reading
+</a>
+
+<a href="vocabulary.html"
+class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+Vocabulary
+</a>
+
+</div>
+</div>
+
+</nav>
+</aside>
+<!-- MAIN -->
+<div class="md:ml-64 flex flex-col items-center justify-center min-h-screen p-6">
+
+<h1 class="text-3xl font-black mb-6">Kelime Kartları</h1>
+
+<div id="card" class="card bg-white w-full max-w-md h-80 rounded-3xl flex flex-col items-center justify-center text-center p-6">
+
+<h2 id="word" class="text-4xl font-black"></h2>
+
+<button onclick="speak(event)" class="mt-4 bg-blue-400 text-white px-4 py-2 rounded-xl">
+🔊 Dinle
+</button>
+
+<p id="hint" class="mt-6 text-gray-500 italic">Dokun → anlamı gör</p>
+
+</div>
+
+<div class="mt-6 text-center">
+<p id="example" class="text-gray-600"></p>
+</div>
+
+<div class="mt-6 flex gap-4">
+<button onclick="prev()" class="bg-gray-300 px-4 py-2 rounded-xl">← Geri</button>
+<button onclick="next()" class="bg-green-400 text-white px-4 py-2 rounded-xl">İleri →</button>
+</div>
+
+</div>
+
 <script>
 const words = [
-["apple","A fruit","I eat an apple."],
-["book","A reading object","This is a book."],
-["car","Vehicle","I have a car."],
-["water","Liquid","Drink water."],
-["house","Building","This is my house."],
-["school","Education place","I go to school."],
-["dog","Animal","The dog is cute."],
-["cat","Animal","The cat sleeps."],
-["sun","Star","The sun is hot."],
-["moon","Night object","The moon is bright."],
-["food","Meal","I like food."],
-["milk","Drink","Milk is healthy."],
-["chair","Furniture","Sit on chair."],
-["table","Furniture","On the table."],
-["phone","Device","My phone is new."],
-["computer","Device","I use computer."],
-["pen","Writing tool","Write with pen."],
-["paper","Material","White paper."],
-["bag","Object","My bag is heavy."],
-["shoe","Clothing","New shoes."],
-["run","Verb","I run fast."],
-["walk","Verb","Walk slowly."],
-["eat","Verb","Eat food."],
-["sleep","Verb","I sleep."],
-["happy","Emotion","I am happy."],
-["sad","Emotion","He is sad."],
-["big","Adjective","Big house."],
-["small","Adjective","Small dog."],
-["hot","Temperature","Hot tea."],
-["cold","Temperature","Cold water."],
-["friend","Person","My friend."],
-["family","Group","Family time."],
-["city","Place","Big city."],
-["road","Place","Long road."],
-["tree","Nature","Green tree."],
-["flower","Nature","Beautiful flower."],
-["rain","Weather","Rain today."],
-["snow","Weather","Snow is white."],
-["wind","Weather","Strong wind."],
-["light","Brightness","Light on."],
-["dark","Opposite","Dark room."],
-["fast","Speed","Fast car."],
-["slow","Speed","Slow walk."],
-["clean","Condition","Clean room."],
-["dirty","Condition","Dirty shoes."],
-["open","Verb","Open door."],
-["close","Verb","Close door."],
-["good","Positive","Good job."],
-["bad","Negative","Bad day."],
-["yes","Answer","Yes I agree."]
+["apple","elma","I eat an apple."],
+["book","kitap","This is a book."],
+["car","araba","I have a car."],
+["water","su","Drink water."],
+["house","ev","My house."],
+["school","okul","Go to school."],
+["dog","köpek","Cute dog."],
+["cat","kedi","Sleeping cat."],
+["sun","güneş","Hot sun."],
+["moon","ay","Bright moon."],
+["food","yemek","Eat food."],
+["milk","süt","Drink milk."],
+["chair","sandalye","Sit here."],
+["table","masa","On table."],
+["phone","telefon","My phone."],
+["computer","bilgisayar","Use computer."],
+["pen","kalem","Write pen."],
+["paper","kağıt","White paper."],
+["bag","çanta","Heavy bag."],
+["shoe","ayakkabı","New shoes."],
+["run","koşmak","Run fast."],
+["walk","yürümek","Walk slow."],
+["eat","yemek","Eat now."],
+["sleep","uyumak","Sleep well."],
+["happy","mutlu","Be happy."],
+["sad","üzgün","Feel sad."],
+["big","büyük","Big house."],
+["small","küçük","Small dog."],
+["hot","sıcak","Hot tea."],
+["cold","soğuk","Cold water."],
+["friend","arkadaş","Good friend."],
+["family","aile","My family."],
+["city","şehir","Big city."],
+["road","yol","Long road."],
+["tree","ağaç","Green tree."],
+["flower","çiçek","Nice flower."],
+["rain","yağmur","Rain today."],
+["snow","kar","White snow."],
+["wind","rüzgar","Strong wind."],
+["light","ışık","Turn light."],
+["dark","karanlık","Dark room."],
+["fast","hızlı","Fast car."],
+["slow","yavaş","Slow walk."],
+["clean","temiz","Clean room."],
+["dirty","kirli","Dirty shoes."],
+["open","açmak","Open door."],
+["close","kapatmak","Close door."],
+["good","iyi","Good job."],
+["bad","kötü","Bad day."],
+["yes","evet","Yes."]
 ];
 
-document.write(words.map(w =>
-`<div class="word bg-white p-3 rounded-xl shadow" onclick="show('${w[0]}','${w[1]}','${w[2]}')">
-${w[0]}
-</div>`
-).join(""));
-</script>
+let index = 0;
+let flipped = false;
 
-</div>
+const wordEl = document.getElementById("word");
+const exampleEl = document.getElementById("example");
+const hintEl = document.getElementById("hint");
 
-<!-- POPUP -->
-<div id="popup" class="popup">
-<h2 id="title" class="font-bold text-xl"></h2>
-<p id="meaning" class="mt-2"></p>
-<p id="example" class="mt-2 text-gray-600"></p>
-<button onclick="closePopup()" class="mt-4 bg-red-400 text-white px-3 py-1 rounded">Close</button>
-</div>
+function updateCard(){
+  const w = words[index];
 
-<script>
-function show(word, meaning, example){
-  document.getElementById("title").innerText = word;
-  document.getElementById("meaning").innerText = meaning;
-  document.getElementById("example").innerText = example;
-  document.getElementById("popup").style.display="block";
+  if(flipped){
+    wordEl.innerText = w[1];
+    exampleEl.innerText = w[2];
+    hintEl.innerText = "Tekrar dokun → kelimeyi gör";
+  } else {
+    wordEl.innerText = w[0];
+    exampleEl.innerText = "";
+    hintEl.innerText = "Dokun → anlamı gör";
+  }
 }
-function closePopup(){
-  document.getElementById("popup").style.display="none";
+
+document.getElementById("card").onclick = () => {
+  flipped = !flipped;
+  updateCard();
+};
+
+function next(){
+  index = (index + 1) % words.length;
+  flipped = false;
+  updateCard();
 }
+
+function prev(){
+  index = (index - 1 + words.length) % words.length;
+  flipped = false;
+  updateCard();
+}
+
+function speak(e){
+  e.stopPropagation();
+  const utterance = new SpeechSynthesisUtterance(words[index][0]);
+  utterance.lang = "en-US";
+  speechSynthesis.speak(utterance);
+}
+
+updateCard();
+
+// dropdown
+const btn = document.getElementById("practiceBtn");
+const menu = document.getElementById("practiceMenu");
+const arrow = document.getElementById("practiceArrow");
+
+btn.addEventListener("click", () => {
+  menu.classList.toggle("hidden");
+  arrow.classList.toggle("rotate-180");
+});
 </script>
 
 </body>
