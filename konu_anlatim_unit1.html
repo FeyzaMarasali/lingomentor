@@ -51,67 +51,73 @@ src="https://i.pravatar.cc/40"/>
 </header>
 
 <!-- ================= SIDEBAR ================= -->
-<aside class="fixed left-0 top-0 h-full w-64 p-4 z-50 bg-white border-r-2 border-gray-200 hidden md:block">
+<!-- 1. Değişiklik: md:block silindi, yerine 'md:flex flex-col' eklendi -->
+<aside class="fixed left-0 top-0 h-full w-64 p-4 z-50 bg-white border-r-2 border-gray-200 hidden md:flex flex-col">
 
-<div class="mb-8 px-4 flex flex-col items-start">
-<img class="w-16 h-16 mb-2"
-src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb4bZ0DFfTjd2I_rRkUnL9Fcpu62g3LrC2bC5yRFaiMdDF4tyIjm7KJvj7Pbrq8cws8ywhvCMob37hBqFGq-K27rHPVujpDIW0LN4dMg5lQcY6fbm5rtFTuENNHOZa-RQlGvwRTTINjmY7PBx0A3Pd7u7jM5X6uXN_RgAW-byeuscydd2p9zLOZ-1QyPeyV298UwYxM5f7jP6M-NEGLPtR6pbW8V6BsIlQoAcvhLBGGx2qJrOiViYsjh3ZYhDx3glUnFRVsGuWS5V"/>
+  <div class="mb-8 px-4 flex flex-col items-start">
+    <img class="w-16 h-16 mb-2"
+    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBb4bZ0DFfTjd2I_rRkUnL9Fcpu62g3LrC2bC5yRFaiMdDF4tyIjm7KJvj7Pbrq8cws8ywhvCMob37hBqFGq-K27rHPVujpDIW0LN4dMg5lQcY6fbm5rtFTuENNHOZa-RQlGvwRTTINjmY7PBx0A3Pd7u7jM5X6uXN_RgAW-byeuscydd2p9zLOZ-1QyPeyV298UwYxM5f7jP6M-NEGLPtR6pbW8V6BsIlQoAcvhLBGGx2qJrOiViYsjh3ZYhDx3glUnFRVsGuWS5V"/>
 
-<h1 class="text-2xl font-black text-[#58CC02] tracking-tight uppercase">
-LINGOMENTOR
-</h1>
-</div>
+    <h1 class="text-2xl font-black text-[#58CC02] tracking-tight uppercase">
+      LINGOMENTOR
+    </h1>
+  </div>
 
-<nav class="flex flex-col gap-2">
+  <!-- 2. Değişiklik: nav etiketine 'flex-1' eklendi -->
+  <nav class="flex flex-col gap-2 flex-1">
 
-<!-- HOME -->
-<a href="ilerleme_paneli.html"
-class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
-<span class="material-symbols-outlined">home</span>
-<span class="font-bold">Home</span>
-</a>
+    <!-- HOME -->
+    <a href="ilerleme_paneli.html"
+    class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+      <span class="material-symbols-outlined">home</span>
+      <span class="font-bold">Home</span>
+    </a>
 
-<!-- LEARN -->
-<a href="learn_anasayfa.html"
-class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
-<span class="material-symbols-outlined">school</span>
-<span class="font-bold">Learn</span>
-</a>
+    <!-- LEARN -->
+    <a href="learn_anasayfa.html"
+    class="flex items-center gap-4 px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+      <span class="material-symbols-outlined">school</span>
+      <span class="font-bold">Learn</span>
+    </a>
 
-<!-- PRACTICE -->
-<div>
+    <!-- PRACTICE -->
+    <div>
+      <button id="practiceBtn"
+      class="flex items-center justify-between w-full px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
 
-<button id="practiceBtn"
-class="flex items-center justify-between w-full px-4 py-3 text-gray-500 hover:bg-gray-100 rounded-xl transition">
+        <div class="flex items-center gap-4">
+          <span class="material-symbols-outlined">fitness_center</span>
+          <span class="font-bold">Practice</span>
+        </div>
 
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined">fitness_center</span>
-<span class="font-bold">Practice</span>
-</div>
+        <span id="practiceArrow" class="material-symbols-outlined transition-transform">
+          expand_more
+        </span>
 
-<span id="practiceArrow" class="material-symbols-outlined transition-transform">
-expand_more
-</span>
+      </button>
 
-</button>
+      <!-- SUB MENU -->
+      <div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+        <a href="reading.html"
+        class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+          Reading
+        </a>
+        <a href="vocabulary.html"
+        class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
+          Vocabulary
+        </a>
+      </div>
+    </div>
 
-<!-- SUB MENU -->
-<div id="practiceMenu" class="hidden flex flex-col pl-12 mt-1 gap-2">
+    <!-- LOG OUT (ÇIKIŞ) -->
+    <!-- 3. Değişiklik: mt-8 yerine 'mt-auto' eklendi -->
+    <a href="giris.html"
+       class="flex items-center gap-4 px-4 py-3 mt-72 mb-2 text-red-500 hover:bg-red-50 rounded-xl transition">
+      <span class="material-symbols-outlined">logout</span>
+      <span class="font-bold">Log Out</span>
+    </a>
 
-<a href="reading.html"
-class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
-Reading
-</a>
-
-<a href="vocabulary.html"
-class="text-sm text-gray-500 hover:text-black hover:bg-gray-100 px-3 py-2 rounded-lg">
-Vocabulary
-</a>
-
-</div>
-</div>
-
-</nav>
+  </nav>
 </aside>
 
 <!-- ================= JS (dropdown çalışması için) ================= -->

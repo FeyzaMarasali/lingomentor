@@ -118,7 +118,7 @@ document.getElementById("registerForm").addEventListener("submit", (e) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then(() => {
       alert("Kayıt başarılı!");
-      window.location.href = "index.html";
+      window.location.href = "girisyap.html";
     })
     .catch((error) => {
       alert(error.message);
